@@ -1,0 +1,118 @@
+.mission-section {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #0f2818 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.mission-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 3rem 2.5rem;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.mission-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.mission-card.highlight {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--accent-color);
+  transform: scale(1.05);
+}
+
+.mission-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  position: relative;
+}
+
+.mission-icon::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--accent-color), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.mission-icon.vision {
+  background: linear-gradient(135deg, #c8a97e, #d4af37);
+}
+
+.mission-icon.mission {
+  background: linear-gradient(135deg, #d4af37, #e6c74a);
+}
+
+.mission-icon.values {
+  background: linear-gradient(135deg, #c8a97e, #d4af37);
+}
+
+.mission-card h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+}
+
+.mission-card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 968px) {
+  .mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-card.highlight {
+    transform: scale(1);
+  }
+
+  .mission-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .mission-card p {
+    font-size: 1rem;
+  }
+}

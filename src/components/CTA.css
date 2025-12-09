@@ -1,0 +1,97 @@
+.cta-section {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #0f2818 100%),
+    url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1920')
+      center/cover;
+  background-blend-mode: overlay;
+  color: var(--white);
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 30% 50%,
+    rgba(212, 175, 55, 0.1) 0%,
+    transparent 60%
+  );
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-content h2 {
+  font-size: 3rem;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.cta-content p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  min-width: 220px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cta-buttons .btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--white);
+  color: var(--white);
+  backdrop-filter: blur(10px);
+}
+
+.cta-buttons .btn-secondary:hover {
+  background: var(--white);
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 4rem 0;
+  }
+
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+
+  .cta-content p {
+    font-size: 1.125rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
